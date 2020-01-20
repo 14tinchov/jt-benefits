@@ -1,0 +1,92 @@
+.footer {
+  min-height: 240px;
+  padding: 90px 0;
+  background: #2A2D34;
+  color: white;
+
+  @media (max-width: 1680px) {
+    background-size: cover;
+  }
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1190px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media (max-width: 1000px) {
+    align-items: flex-start;
+    padding: 0 60px;
+  }
+
+  @media (max-width: 565px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.footer-name {
+  font-size: 28px;
+  font-weight: 700;
+  background-size: 927px 920px;
+  background-image: url(https://www.jobandtalent.com/assets/sprites/landing@1x-b4ac7773c63598383852b0bc3f85d49fff9c5c934ec31cbf9d2fcc6b66d08d72.png);
+  width: 144px;
+  height: 25px;
+  background-position: -397px -645px;
+  color: transparent;
+}
+
+.footer-social-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.footer-social-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  width: 28px;
+  height: 28px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
+  color: white;
+
+  @media (max-width: 1000px) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    font-size: 20px;
+    text-align: right;
+  }
+
+  @media (max-width: 565px) {
+    margin-left: 0;
+    margin-top: 40px;
+    text-align: left;
+  }
+}
+
+.footer-nav-link {
+  &:not(:last-child) {
+    margin-right: 40px;
+
+    @media (max-width: 1000px) {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  }
+}
