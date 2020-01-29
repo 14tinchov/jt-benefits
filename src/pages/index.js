@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby';
-
 import Layout from '../components/layouts'
+import { FeaturedItems } from '../components/slices'
 
 export const query = graphql`
 {
@@ -98,7 +98,19 @@ export const query = graphql`
   }
 }
 `
-
+const RenderSlices = ({ slices }) => {
+  return slices.map((slice, index) => {
+    const res = (() => {
+      switch(slice.type) {
+        case 'featured_items': return (
+          <FeaturedItems slice={slice} />
+        )
+        default: return
+      }
+    })();
+    return res;
+  })
+}
 
 const RenderBody = ({ home }) => (
   <React.Fragment>
@@ -122,28 +134,7 @@ const RenderBody = ({ home }) => (
         <a href="" className="mg-left">View all</a>
       </div>
 
-      <div className="card-list">
-        <div className="card">
-          <div className="card-image">
-            <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
-          </div>
-          <div className="card-separator"><hr/></div>
-          <div className="card-content">
-            <span className="card-title">IronHack Intership</span>
-            <p>To become a developer</p>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card-image">
-            <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
-          </div>
-          <div className="card-separator"><hr/></div>
-          <div className="card-content">
-            <span className="card-title">IronHack Intership</span>
-            <p>To become a developer</p>
-          </div>
-        </div>
-      </div>
+      <RenderSlices slices={home.body} />
     </section>
     <section className="homepage-section">
       <div className="homepage-section-head">
@@ -152,29 +143,7 @@ const RenderBody = ({ home }) => (
       </div>
 
       <p className="homepage-section-description">Training courses</p>
-
-      <div className="card-list">
-        <div className="card">
-          <div className="card-image">
-            <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
-          </div>
-          <div className="card-separator"><hr/></div>
-          <div className="card-content">
-            <span className="card-title">IronHack Intership</span>
-            <p>To become a developer</p>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card-image">
-            <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
-          </div>
-          <div className="card-separator"><hr/></div>
-          <div className="card-content">
-            <span className="card-title">IronHack Intership</span>
-            <p>To become a developer</p>
-          </div>
-        </div>
-      </div>
+      <RenderSlices slices={home.body} />
     </section>
   </React.Fragment>
 );
@@ -188,6 +157,5 @@ export default ({ data }) => {
       <RenderBody home={doc.node} />
     </Layout>
   )
-
 }
 

@@ -3,6 +3,7 @@ import { RichText } from 'prismic-reactjs'
 import { linkResolver } from '../utils/linkResolver'
 import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { ProductCard } from '../components/slices'
 
 import Layout from '../components/layouts'
 
@@ -43,18 +44,7 @@ export const query = graphql`
 
 const RenderProductList = ({ products }) => {
   return products.map((item) =>
-    <Link to={linkResolver(item.node._meta)}>
-      <div key={item.node._meta.uid} className="card">
-        <div className="card-image">
-          <img src={item.node.product_image.url} alt={item.node.product_image.alt}/>
-        </div>
-        <div className="card-separator"><hr/></div>
-        <div className="card-content">
-          <span className="card-title">{RichText.asText(item.node.product_name)}</span>
-          <p>{RichText.asText(item.node.sub_title)}</p>
-        </div>
-      </div>
-    </Link>
+    <ProductCard item={item}/>
   )
 }
 
