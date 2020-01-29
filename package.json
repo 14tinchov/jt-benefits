@@ -1,9 +1,9 @@
 {
-  "name": "prismic-gatsby-coffee-sample",
+  "name": "prismic-gatsby-jt-benefits",
   "private": true,
   "description": "A sample website built using Gatsby connected to Prismic data source",
   "version": "0.1.0",
-  "author": "Raul Gonzalez @raulg",
+  "author": "@codegram",
   "dependencies": {
     "gatsby": "^2.3.27",
     "gatsby-plugin-manifest": "^2.0.29",

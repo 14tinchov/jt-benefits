@@ -1,8 +1,5 @@
 import React from 'react'
-import { RichText } from 'prismic-reactjs'
-import { linkResolver } from '../utils/linkResolver'
 import { graphql } from 'gatsby';
-import { CTABanner, FeaturedItems, NumberedItems, Separator, TextBlock } from '../components/slices'
 
 import Layout from '../components/layouts'
 
@@ -102,66 +99,84 @@ export const query = graphql`
 }
 `
 
-const RenderSlices = ({ slices }) => {
-  return slices.map((slice, index) => {
-    const res = (() => {
-      switch(slice.type) {
-        case 'cta_banner': return (
-          <div key={index} className="homepage-slice-wrapper">
-            <CTABanner slice={slice} />
-          </div>
-        )
-        console.log(slice);
-        case 'featured_items': return (
-          <div key={index} className="homepage-slice-wrapper">
-            <FeaturedItems slice={slice} />
-          </div>
-        )
-
-        case 'big_bullet_item': return (
-          <div key={index} className="homepage-slice-wrapper">
-            <NumberedItems slice={slice} />
-          </div>
-        )
-
-        case 'separator': return (
-          <div key={index} className="homepage-slice-wrapper">
-            <Separator />
-          </div>
-        )
-
-        case 'text_block': return (
-          <div key={index} className="homepage-slice-wrapper">
-            <TextBlock slice={slice} />
-          </div>
-        )
-
-        default: return
-      }
-    })();
-    return res;
-  })
-}
 
 const RenderBody = ({ home }) => (
   <React.Fragment>
-    <section className="homepage-banner">
-      <img className="homepage-banner-image" src={home.banner_image.url} alt={home.banner_image.alt} />
-      <div className="homepage-banner-box-wrapper">
-        <div className="homepage-banner-box">
-        {RichText.render(home.banner_text, linkResolver)}
+    <section className="homepage-section">
+      <div className="homepage-section-head">
+        <h1>Benefits</h1>
+      </div>
+
+      <div className="card-list">
+        <div className="card card-special" style={{backgroundColor: '#49c793', color: 'white'}}>
+          <span className="card-icon icon-health"></span>
+          <div className="card-title">
+            Health <br/> insurance
+          </div>
         </div>
       </div>
     </section>
+    <section className="homepage-section">
+      <div className="homepage-section-head">
+        <h2>Discount & coupons</h2>
+        <a href="" className="mg-left">View all</a>
+      </div>
 
-    <div className="homepage-slices-wrapper">
-      <RenderSlices slices={home.body} />
-    </div>
+      <div className="card-list">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
+          </div>
+
+          <div class="card-content">
+            <span class="card-title">IronHack Intership</span>
+            <p>To become a developer</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title">IronHack Intership</span>
+            <p>To become a developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="homepage-section">
+      <div className="homepage-section-head">
+        <h2>Professional develpment</h2>
+        <a href="" className="mg-left">View all</a>
+      </div>
+
+      <p className="homepage-section-description">Training courses</p>
+
+      <div className="card-list">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title">IronHack Intership</span>
+            <p>To become a developer</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title">IronHack Intership</span>
+            <p>To become a developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </React.Fragment>
 );
 
 export default ({ data }) => {
-  // Required check for no data being returned
   const doc = data.prismic.allHomepages.edges.slice(0,1).pop();
   if(!doc) return null;
   

@@ -5,6 +5,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 main {
-  min-height: calc(100vh - 513px);
+  padding: 0 16px;
+  width: 100vw;
+  max-width: 720px;
 }
