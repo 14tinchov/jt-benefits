@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import { linkResolver } from '../utils/linkResolver'
 import Layout from '../components/layouts'
 import { FeaturedItems } from '../components/slices'
 
@@ -131,7 +132,7 @@ const RenderBody = ({ home }) => (
     <section className="homepage-section">
       <div className="homepage-section-head">
         <h2>Discount & coupons</h2>
-        <a href="" className="mg-left">View all</a>
+        <Link key='productsView' className="mg-left" to={linkResolver({id: "XiDnpRAAACQAcwA5",type: "products"})}>View All</Link>
       </div>
 
       <RenderSlices slices={home.body} />
@@ -139,7 +140,7 @@ const RenderBody = ({ home }) => (
     <section className="homepage-section">
       <div className="homepage-section-head">
         <h2>Professional develpment</h2>
-        <a href="" className="mg-left">View all</a>
+        <Link key='productsView' className="mg-left" to={linkResolver({id: "XiDnpRAAACQAcwA5",type: "products"})}>View All</Link>
       </div>
 
       <p className="homepage-section-description">Training courses</p>

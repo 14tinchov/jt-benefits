@@ -11,8 +11,11 @@
  */
 
 .product-hero-inner {
+  // justify-content: space-between;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
   @media (max-width: 1190px) {
     flex-direction: column;
