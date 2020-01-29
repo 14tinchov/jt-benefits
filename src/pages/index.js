@@ -123,22 +123,23 @@ const RenderBody = ({ home }) => (
       </div>
 
       <div className="card-list">
-        <div class="card">
-          <div class="card-image">
+        <div className="card">
+          <div className="card-image">
             <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
           </div>
-
-          <div class="card-content">
-            <span class="card-title">IronHack Intership</span>
+          <div className="card-separator"><hr/></div>
+          <div className="card-content">
+            <span className="card-title">IronHack Intership</span>
             <p>To become a developer</p>
           </div>
         </div>
-        <div class="card">
-          <div class="card-image">
+        <div className="card">
+          <div className="card-image">
             <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
           </div>
-          <div class="card-content">
-            <span class="card-title">IronHack Intership</span>
+          <div className="card-separator"><hr/></div>
+          <div className="card-content">
+            <span className="card-title">IronHack Intership</span>
             <p>To become a developer</p>
           </div>
         </div>
@@ -153,21 +154,23 @@ const RenderBody = ({ home }) => (
       <p className="homepage-section-description">Training courses</p>
 
       <div className="card-list">
-        <div class="card">
-          <div class="card-image">
+        <div className="card">
+          <div className="card-image">
             <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
           </div>
-          <div class="card-content">
-            <span class="card-title">IronHack Intership</span>
+          <div className="card-separator"><hr/></div>
+          <div className="card-content">
+            <span className="card-title">IronHack Intership</span>
             <p>To become a developer</p>
           </div>
         </div>
-        <div class="card">
-          <div class="card-image">
+        <div className="card">
+          <div className="card-image">
             <img src="https://picsum.photos/id/1001/200/300" alt="example"/>
           </div>
-          <div class="card-content">
-            <span class="card-title">IronHack Intership</span>
+          <div className="card-separator"><hr/></div>
+          <div className="card-content">
+            <span className="card-title">IronHack Intership</span>
             <p>To become a developer</p>
           </div>
         </div>
